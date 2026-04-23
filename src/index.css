@@ -17,10 +17,12 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #d1d5db;
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #9ca3af;
 }
@@ -38,7 +40,7 @@ body {
   backdrop-filter: blur(8px);
   border-radius: 16px;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
@@ -47,20 +49,21 @@ body {
 
 .card-hover:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* 🌟 IMAGE POLISH */
 img {
   transition: all 0.3s ease;
 }
+
 img:hover {
   filter: brightness(1.05);
 }
 
 /* 🔘 BUTTON GLOW */
 button {
-   position: relative;
+  position: relative;
   overflow: hidden;
 }
 
@@ -69,7 +72,7 @@ button::after {
   position: absolute;
   width: 120%;
   height: 120%;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -112,19 +115,22 @@ button:active::after {
   background: linear-gradient(135deg, #facc15, #eab308) !important;
   font-weight: 600;
 }
+
 .bg-white {
-  background: rgba(255,255,255,0.85) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(6px);
 }
 
 /* 🧠 TEXT POLISH */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   letter-spacing: -0.02em;
 }
 
 /* 🧊 INPUT FIELD UPGRADE */
 input {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(6px);
   transition: all 0.2s ease;
 }
@@ -153,11 +159,13 @@ input:focus {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .animate-pulse {
   position: relative;
   overflow: hidden;
@@ -169,12 +177,10 @@ input:focus {
   position: absolute;
   inset: 0;
   transform: translateX(-100%);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent);
   animation: shimmer 1.2s infinite;
 }
 
@@ -183,6 +189,7 @@ input:focus {
     transform: translateX(100%);
   }
 }
+
 .sidebar button {
   transition: all 0.2s ease;
 }
@@ -200,13 +207,14 @@ input:focus {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-.grid > div {
+.grid>div {
   animation: fadeUp 0.4s ease both;
 }
 
@@ -215,6 +223,7 @@ input:focus {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

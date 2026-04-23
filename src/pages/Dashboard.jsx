@@ -29,7 +29,7 @@ function Dashboard() {
         await signOut(auth);
     };
 
-    // 📡 FETCH DATA
+
     useEffect(() => {
         const fetchSelected = async () => {
             const res = await fetch(
@@ -66,7 +66,7 @@ function Dashboard() {
         }
     }, [user]);
 
-    // 💾 SAVE / REMOVE
+
     const saveBook = async (book) => {
         await setDoc(doc(db, "users", user.uid, "books", book.id), {
             id: book.id,
@@ -101,17 +101,17 @@ function Dashboard() {
 
     return (
         <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
-            {/* SIDEBAR */}
+
             <div className="flex flex-col lg:flex-col w-full lg:w-64 bg-white px-4 py-3 lg:py-6 gap-2 lg:gap-4 sticky top-0 z-50 lg:h-screen">
 
-                {/* TOP BAR (mobile/tablet) */}
+
                 <div className="flex flex-row items-center justify-between lg:block">
                     <h1 className="text-sm sm:text-base md:text-xl font-bold lg:mb-10">
                         📚 Summarist
                     </h1>
                 </div>
 
-                {/* NAV BUTTONS */}
+
                 <div className="flex flex-row lg:flex-col gap-2 sm:gap-3 lg:gap-2 justify-around lg:justify-start">
 
                     <button
@@ -156,7 +156,7 @@ function Dashboard() {
 
                 </div>
 
-                {/* LOGOUT (desktop only) */}
+
                 <button
                     onClick={handleLogout}
                     className="hidden lg:block text-white bg-red-600 px-4 py-2 rounded-lg shadow mt-auto"
@@ -172,7 +172,7 @@ function Dashboard() {
 
 
 
-                    {/* FOR YOU */}
+
                     {page === "search" && (
                         <Search />
                     )}
@@ -281,7 +281,7 @@ function Dashboard() {
                         </>
                     )}
 
-                    {/* LIBRARY */}
+
                     {page === "library" && (
                         <>
                             <h2 className="text-xl font-semibold mb-4">
@@ -326,7 +326,7 @@ function Dashboard() {
                     )}
                 </div>
             </div>
-            {/* ✅ LOGIN MODAL (OUTSIDE BLUR) */}
+
             {showLogin && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
 

@@ -33,7 +33,7 @@ function Settings() {
 
         <h1 className="text-2xl md:text-3xl font-bold">Settings</h1>
 
-        {/* Subscription */}
+
         <div>
           <h2 className="text-sm text-gray-500 mb-1">
             Your Subscription plan
@@ -56,12 +56,12 @@ function Settings() {
           )}
         </div>
 
-        {/* Email */}
+
         <div className="border-t pt-4">
-        <div>
-          <h2 className="text-sm text-gray-500 mb-1">Account</h2>
-          <p className="text-gray-600">{user.email}</p>
-        </div>
+          <div>
+            <h2 className="text-sm text-gray-500 mb-1">Account</h2>
+            <p className="text-gray-600">{user.email}</p>
+          </div>
         </div>
       </div>
     </div>

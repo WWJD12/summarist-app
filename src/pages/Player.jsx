@@ -14,9 +14,9 @@ function Player() {
 
         const data = await res.json();
 
-        console.log("PLAYER DATA:", data); // 👈 debug
+        
 
-        setBook(data); // ✅ IMPORTANT (NOT data.data)
+        setBook(data); 
       } catch (err) {
         console.error("Error fetching book:", err);
       }
@@ -25,7 +25,7 @@ function Player() {
     fetchBook();
   }, [id]);
 
-  // 🧱 LOADING STATE
+
   if (!book) {
     return (
       <div className="p-10 animate-pulse">
@@ -40,7 +40,7 @@ function Player() {
   return (
 
     <div className="p-10 max-w-2xl mx-auto page">
-      
+
       <h1 className="text-2xl font-bold mb-4">
         {book.title}
       </h1>
@@ -51,11 +51,11 @@ function Player() {
         className="w-40 mb-6"
       />
 
-      {/* 🎧 AUDIO PLAYER */}
+
       <audio controls className="w-full mb-6">
         <source src={book.audioLink} type="audio/mpeg" />
       </audio>
-      
+
 
       <p className="text-gray-700 whitespace-pre-line">
         {book.summary}

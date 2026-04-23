@@ -41,10 +41,10 @@ function Search() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                     {results.map((b) => (
                         <div
-                                        key={b.id}
-                                        onClick={() => navigate(`/book/${b.id}`)}
-                                        className="relative bg-white p-4 rounded-xl shadow hover:shadow-lg transition cursor-pointer flex flex-col"
-                                    >
+                            key={b.id}
+                            onClick={() => navigate(`/book/${b.id}`)}
+                            className="relative bg-white p-4 rounded-xl shadow hover:shadow-lg transition cursor-pointer flex flex-col"
+                        >
                             {b.subscriptionRequired && (
                                 <span className="absolute top-2 right-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-xs px-2 py-1 rounded-full font-semibold shadow">
                                     Premium

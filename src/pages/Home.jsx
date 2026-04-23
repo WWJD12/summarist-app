@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="bg-white text-black">
 
-      {/* NAV */}
+
       <nav className="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-8 py-4 shadow gap-3 sm:gap-0">
         <h1 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
           📚 Summarist
@@ -25,7 +25,7 @@ function Home() {
         </ul>
       </nav>
 
-      {/* HERO */}
+
       <section className="flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-10 py-10 md:py-16 gap-6">
 
         <div className="max-w-lg text-center md:text-left">
@@ -52,7 +52,7 @@ function Home() {
         />
       </section>
 
-      {/* FEATURES */}
+
       <section className="text-center py-10 sm:py-16 px-4">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10">
           Understand books in few minutes
@@ -87,7 +87,7 @@ function Home() {
         </div>
       </section>
 
-      {/* STATS SECTION */}
+
       <section className="py-12 sm:py-20 px-4 sm:px-6 md:px-10 bg-gray-50">
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center mb-12 md:mb-16">
@@ -119,14 +119,14 @@ function Home() {
 
       </section>
 
-      {/* REVIEWS */}
+
       <section className="py-12 sm:py-20 px-4 sm:px-6 md:px-10 bg-white">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 sm:mb-12">
           What our members say
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {[1,2,3,4].map((_, i) => (
+          {[1, 2, 3, 4].map((_, i) => (
             <div key={i} className="bg-gray-50 p-4 sm:p-6 rounded-lg shadow-sm">
               <div className="flex justify-between mb-2">
                 <p className="font-semibold text-sm sm:text-base">User</p>
@@ -151,7 +151,7 @@ function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+
       <section className="bg-gray-900 text-white py-10 sm:py-16 px-4 sm:px-6 md:px-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 text-sm">
 

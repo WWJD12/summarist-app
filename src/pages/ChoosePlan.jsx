@@ -4,12 +4,12 @@ function ChoosePlan() {
   const navigate = useNavigate();
 
   const handleSelect = (plan) => {
-    console.log("Selected plan:", plan);
+    
 
-    // 🧠 TEMP: simulate upgrade
+
     alert(`You selected the ${plan} plan!`);
 
-    // redirect back to app
+
     navigate("/for-you");
   };
 
@@ -22,7 +22,7 @@ function ChoosePlan() {
 
       <div className="grid md:grid-cols-2 gap-6">
 
-        {/* 🟢 MONTHLY */}
+
         <div className="border p-6 rounded-lg shadow w-72 text-center">
 
           <h2 className="text-xl font-semibold mb-2">
@@ -48,7 +48,7 @@ function ChoosePlan() {
 
         </div>
 
-        {/* 🟣 YEARLY */}
+
         <div className="border p-6 rounded-lg shadow w-72 text-center relative">
 
           <span className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded">

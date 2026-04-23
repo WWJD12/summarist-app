@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
-  // 👇 THIS IS THE FIX
+
   if (loading) {
     return <div className="p-10">Loading...</div>;
   }

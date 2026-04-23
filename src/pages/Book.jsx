@@ -35,7 +35,7 @@ function Book() {
 
   const handleListen = handleRead;
 
-  // LOADING
+
   if (!book) {
     return (
       <div className="p-6 sm:p-10 animate-pulse">
@@ -53,7 +53,7 @@ function Book() {
   return (
     <div className="px-4 sm:px-6 md:px-10 py-6 max-w-[1100px] mx-auto">
 
-      {/* BACK BUTTON */}
+
       <button
         onClick={() => navigate("/for-you")}
         className="mb-4 bg-green-500 hover:bg-green-600 transition text-white px-4 py-2 rounded-lg shadow"
@@ -61,16 +61,16 @@ function Book() {
         Back
       </button>
 
-      {/* MAIN LAYOUT */}
+
       <div className="flex flex-col md:flex-row gap-6 md:gap-10">
 
-        {/* IMAGE */}
+
         <img
           src={book.imageLink}
           className="w-40 h-56 sm:w-48 sm:h-64 object-cover rounded mx-auto md:mx-0"
         />
 
-        {/* CONTENT */}
+
         <div className="flex-1">
 
           <h1 className="text-xl sm:text-2xl font-bold mb-1">
@@ -88,7 +88,7 @@ function Book() {
             {book.summary}
           </p>
 
-          {/* ACTION BUTTONS */}
+
           <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
 
             <button
