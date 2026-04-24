@@ -15,6 +15,7 @@ function Dashboard() {
     const [suggested, setSuggested] = useState([]);
     const [savedBooks, setSavedBooks] = useState([]);
     const [confirmId, setConfirmId] = useState(null);
+    const [loading, setLoading] = useState(true);
     const { user } = useAuth();
     const navigate = useNavigate();
 
@@ -58,7 +59,12 @@ function Dashboard() {
         fetchSelected();
         fetchRecommended();
         fetchSuggested();
+
+        setTimeout(() => setLoading(false), 1000);
+
     }, []);
+
+
 
     useEffect(() => {
         if (user) {
@@ -169,24 +175,31 @@ function Dashboard() {
                 className={`flex-1 px-6 py-8 ${!user ? "pointer-events-none blur-sm" : ""}`}
             >
                 <div className="max-w-[1100px] mx-auto">
+                    {loading && (
+                        <div className="animate-pulse mb-6">
+                            <div className="h-32 bg-gray-300 rounded mb-4"></div>
 
-
-
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                {[1, 2, 3, 4].map(i => (
+                                    <div key={i} className="h-40 bg-gray-300 rounded"></div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
 
                     {page === "search" && (
                         <Search />
                     )}
                     {page === "forYou" && (
+
                         <>{selectedBook && (
+
                             <div className="hidden lg:flex bg-yellow-100 p-4 sm:p-5 md:p-6 rounded-xl mb-6 md:mb-8 flex-col sm:flex-row gap-4 md:gap-6 items-center sm:items-start">
                                 <img
                                     src={selectedBook.imageLink}
                                     onClick={() => navigate(`/book/${selectedBook.id}`)}
                                     className="w-20 sm:w-24 h-28 sm:h-32 object-cover"
                                 />
-
-
-
                                 <div>
                                     <p className="text-sm text-gray-500">
                                         Selected just for you
@@ -243,6 +256,15 @@ function Dashboard() {
                             <h2 className="text-xl font-semibold mb-4">
                                 Suggested Books
                             </h2>
+                            {loading && (
+                                <div className="animate-pulse mb-6">
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        {[1, 2, 3, 4].map(i => (
+                                            <div key={i} className="h-40 bg-gray-300 rounded"></div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                                 {suggested.map((b) => (
@@ -287,6 +309,15 @@ function Dashboard() {
                             <h2 className="text-xl font-semibold mb-4">
                                 My Library
                             </h2>
+                            {loading && (
+                                <div className="animate-pulse mb-6">
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        {[1, 2, 3, 4].map(i => (
+                                            <div key={i} className="h-40 bg-gray-300 rounded"></div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 page">
                                 {savedBooks.map((b) => (
@@ -324,6 +355,7 @@ function Dashboard() {
                             </div>
                         </>
                     )}
+
                 </div>
             </div>
 

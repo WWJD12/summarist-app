@@ -2,9 +2,65 @@ import { useNavigate } from "react-router-dom";
 import { AiFillFileText, AiFillBulb } from "react-icons/ai";
 import { BsStarFill } from "react-icons/bs";
 import { RiLeafLine } from "react-icons/ri";
+import { useState, useEffect } from "react";
 
 function Home() {
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 1000);
+
+  return () => clearTimeout(timer);
+}, []);
+
+if (loading) {
+  return (
+    <div className="animate-pulse bg-white min-h-screen">
+
+      <div className="flex justify-between items-center px-6 py-4 shadow">
+        <div className="h-6 w-32 bg-gray-300 rounded"></div>
+        <div className="flex gap-4">
+          <div className="h-4 w-12 bg-gray-300 rounded"></div>
+          <div className="h-4 w-12 bg-gray-300 rounded"></div>
+          <div className="h-4 w-12 bg-gray-300 rounded"></div>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row items-center px-6 py-12 gap-6">
+        <div className="flex-1 space-y-4">
+          <div className="h-8 w-3/4 bg-gray-300 rounded"></div>
+          <div className="h-4 w-1/2 bg-gray-300 rounded"></div>
+          <div className="h-10 w-32 bg-gray-300 rounded"></div>
+        </div>
+        <div className="w-64 h-40 bg-gray-300 rounded"></div>
+      </div>
+
+      <div className="flex justify-center gap-8 py-10">
+        {[1,2,3].map(i => (
+          <div key={i} className="space-y-2 text-center">
+            <div className="w-10 h-10 bg-gray-300 rounded mx-auto"></div>
+            <div className="h-4 w-24 bg-gray-300 rounded"></div>
+            <div className="h-3 w-20 bg-gray-300 rounded"></div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-10">
+        {[1,2,3,4].map(i => (
+          <div key={i} className="bg-gray-100 p-4 rounded">
+            <div className="h-4 w-20 bg-gray-300 mb-2 rounded"></div>
+            <div className="h-3 w-full bg-gray-300 rounded"></div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  );
+}
 
   return (
     <div className="bg-white text-black">

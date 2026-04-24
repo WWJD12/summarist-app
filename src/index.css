@@ -6,14 +6,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 🌌 GLOBAL BACKGROUND */
 body {
   background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
   font-family: Inter, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ✨ SCROLLBAR (SUBTLE PREMIUM TOUCH) */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -27,14 +25,12 @@ body {
   background: #9ca3af;
 }
 
-/* 🧊 SIDEBAR GLASS EFFECT */
 .sidebar {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   border-right: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* 📚 CARD UPGRADE */
 .card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
@@ -52,7 +48,6 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* 🌟 IMAGE POLISH */
 img {
   transition: all 0.3s ease;
 }
@@ -61,7 +56,6 @@ img:hover {
   filter: brightness(1.05);
 }
 
-/* 🔘 BUTTON GLOW */
 button {
   position: relative;
   overflow: hidden;
@@ -92,7 +86,6 @@ button:active::after {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* 💡 GREEN BUTTON ENHANCEMENT */
 .bg-green-500 {
   background: linear-gradient(135deg, #22c55e, #16a34a) !important;
 }
@@ -101,7 +94,6 @@ button:active::after {
   background: linear-gradient(135deg, #16a34a, #15803d) !important;
 }
 
-/* 🔵 BLUE BUTTON ENHANCEMENT */
 .bg-blue-500 {
   background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
 }
@@ -110,7 +102,6 @@ button:active::after {
   background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
 }
 
-/* 🟡 PREMIUM BADGE */
 .bg-yellow-400 {
   background: linear-gradient(135deg, #facc15, #eab308) !important;
   font-weight: 600;
@@ -121,14 +112,12 @@ button:active::after {
   backdrop-filter: blur(6px);
 }
 
-/* 🧠 TEXT POLISH */
 h1,
 h2,
 h3 {
   letter-spacing: -0.02em;
 }
 
-/* 🧊 INPUT FIELD UPGRADE */
 input {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(6px);
@@ -140,12 +129,10 @@ input:focus {
   box-shadow: 0 0 0 2px #22c55e;
 }
 
-/* ✨ MODAL POLISH */
 .fixed.inset-0 {
   backdrop-filter: blur(4px);
 }
 
-/* 🎯 SMOOTH EVERYTHING */
 * {
   transition-property: transform, box-shadow, background, color;
 }

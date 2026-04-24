@@ -1,12 +1,46 @@
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { useAuth } from "../context/AuthContext";
+import { useState, useEffect } from "react";
 
 function Settings() {
   const navigate = useNavigate();
   const { user } = useAuth();
 
+  const [loading, setLoading] = useState(true);
+
   const subscription = "basic";
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-100 pt-10 px-6 flex justify-center">
+        <div className="max-w-md md:max-w-xl w-full bg-white rounded-2xl shadow-xl p-6 md:p-10 space-y-6 animate-pulse">
+
+          <div className="h-6 w-32 bg-gray-300 rounded"></div>
+
+          <div className="space-y-3">
+            <div className="h-4 w-40 bg-gray-300 rounded"></div>
+            <div className="h-6 w-24 bg-gray-300 rounded"></div>
+            <div className="h-10 w-full bg-gray-300 rounded"></div>
+          </div>
+
+          <div className="border-t pt-4 space-y-2">
+            <div className="h-4 w-20 bg-gray-300 rounded"></div>
+            <div className="h-4 w-48 bg-gray-300 rounded"></div>
+          </div>
+
+        </div>
+      </div>
+    );
+  }
 
   if (!user) {
     return (
@@ -33,7 +67,6 @@ function Settings() {
 
         <h1 className="text-2xl md:text-3xl font-bold">Settings</h1>
 
-
         <div>
           <h2 className="text-sm text-gray-500 mb-1">
             Your Subscription plan
@@ -56,13 +89,13 @@ function Settings() {
           )}
         </div>
 
-
         <div className="border-t pt-4">
           <div>
             <h2 className="text-sm text-gray-500 mb-1">Account</h2>
             <p className="text-gray-600">{user.email}</p>
           </div>
         </div>
+
       </div>
     </div>
   );
