@@ -3,13 +3,14 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-apiKey: import.meta.env.VITE_API_KEY,
-  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_APP_ID,
-  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+apiKey: "AIzaSyB_UwWeyT35u9Zgr6a9XvFl_QwwyTs9sKI",
+  authDomain: "book-app-1af80.firebaseapp.com",
+  databaseURL: "https://book-app-1af80-default-rtdb.firebaseio.com",
+  projectId: "book-app-1af80",
+  storageBucket: "book-app-1af80.firebasestorage.app",
+  messagingSenderId: "895723637599",
+  appId: "1:895723637599:web:4fb5fcd512cdaad40184ea",
+  measurementId: "G-5DVC03R7S8"
 };
 
 const app = initializeApp(firebaseConfig);

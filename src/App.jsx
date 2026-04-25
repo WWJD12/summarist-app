@@ -9,7 +9,7 @@ import Search from "./pages/Search";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/summarist-app/">
       <Routes>
         <Route path="/player/:id" element={<Player />} />
         <Route path="/" element={<Home />} />
