@@ -6,6 +6,7 @@ import { doc, setDoc, collection, getDocs, deleteDoc, } from "firebase/firestore
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Search from "./Search";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { signInAnonymously } from "firebase/auth";
 
@@ -422,7 +423,13 @@ function Dashboard() {
                                     setShowLogin(false);
                                 } catch (error) {
                                     console.log(error);
-                                    alert("Login failed");
+
+                                    try {
+                                        await createUserWithEmailAndPassword(auth, email, password);
+                                        setShowLogin(false);
+                                    } catch (err) {
+                                        alert("Login failed");
+                                    }
                                 }
                             }}
                             className="w-full bg-green-500 text-white py-2 rounded"
