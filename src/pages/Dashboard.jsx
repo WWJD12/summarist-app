@@ -6,8 +6,7 @@ import { doc, setDoc, collection, getDocs, deleteDoc, } from "firebase/firestore
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Search from "./Search";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { signInAnonymously } from "firebase/auth";
 
 function Dashboard() {
@@ -422,19 +421,25 @@ function Dashboard() {
                                     await signInWithEmailAndPassword(auth, email, password);
                                     setShowLogin(false);
                                 } catch (error) {
-                                    console.log(error);
-
-                                    try {
-                                        await createUserWithEmailAndPassword(auth, email, password);
-                                        setShowLogin(false);
-                                    } catch (err) {
-                                        alert("Login failed");
-                                    }
+                                    alert("Account not found. Please create one.");
                                 }
                             }}
                             className="w-full bg-green-500 text-white py-2 rounded"
                         >
                             Login
+                        </button>
+                        <button
+                            onClick={async () => {
+                                try {
+                                    await createUserWithEmailAndPassword(auth, email, password);
+                                    setShowLogin(false);
+                                } catch (error) {
+                                    alert("Signup failed. Try a different email.");
+                                }
+                            }}
+                            className="w-full bg-purple-500 text-white py-2 rounded mt-2"
+                        >
+                            Create Account
                         </button>
 
                     </div>
