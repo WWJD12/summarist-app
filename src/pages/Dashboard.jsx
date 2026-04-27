@@ -6,6 +6,7 @@ import { doc, setDoc, collection, getDocs, deleteDoc, } from "firebase/firestore
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Search from "./Search";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { signInAnonymously } from "firebase/auth";
 
 function Dashboard() {
@@ -18,6 +19,8 @@ function Dashboard() {
     const [confirmId, setConfirmId] = useState(null);
     const [loading, setLoading] = useState(true);
     const { user } = useAuth();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
 
@@ -400,17 +403,27 @@ function Dashboard() {
                         <input
                             placeholder="Email Address"
                             className="w-full border p-2 rounded mb-2"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
 
                         <input
                             type="password"
                             placeholder="Password"
                             className="w-full border p-2 rounded mb-3"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
 
                         <button
-                            onClick={() => {
-                                setShowLogin(false);
+                            onClick={async () => {
+                                try {
+                                    await signInWithEmailAndPassword(auth, email, password);
+                                    setShowLogin(false);
+                                } catch (error) {
+                                    console.log(error);
+                                    alert("Login failed");
+                                }
                             }}
                             className="w-full bg-green-500 text-white py-2 rounded"
                         >
