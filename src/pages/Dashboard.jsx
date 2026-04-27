@@ -431,9 +431,11 @@ function Dashboard() {
                         <button
                          onClick={async () => {
                             try {
-                                await createUserWithEmailAndPassword(auth, email, password);
+                               const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
                                 alert("Account created successfully ✅");
+                                
+                                 const user = userCredential.user;
 
                                 setShowLogin(false);
                                 navigate("/for-you");
