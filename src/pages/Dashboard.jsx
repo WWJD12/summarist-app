@@ -6,6 +6,7 @@ import { doc, setDoc, collection, getDocs, deleteDoc, } from "firebase/firestore
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Search from "./Search";
+import { signInAnonymously } from "firebase/auth";
 
 function Dashboard() {
     const [page, setPage] = useState("forYou");
@@ -376,7 +377,8 @@ function Dashboard() {
                         </h2>
 
                         <button
-                            onClick={() => {
+                            onClick={async () => {
+                                await signInAnonymously(auth);
                                 setShowLogin(false);
                             }}
                             className="w-full bg-blue-600 text-white py-2 rounded mb-3"
