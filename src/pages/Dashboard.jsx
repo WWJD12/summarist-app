@@ -429,14 +429,18 @@ function Dashboard() {
                             Login
                         </button>
                         <button
-                            onClick={async () => {
-                                try {
-                                    await createUserWithEmailAndPassword(auth, email, password);
-                                    setShowLogin(false);
-                                } catch (error) {
-                                    console.log(error);
-                                    alert(error.message);
-                                    }
+                         onClick={async () => {
+                            try {
+                                await createUserWithEmailAndPassword(auth, email, password);
+
+                                alert("Account created successfully ✅");
+
+                                setShowLogin(false);
+                                navigate("/for-you");
+                            } catch (error) {
+                                console.log(error);
+                                alert(error.message);
+                            }
                             }}
                             className="w-full bg-purple-500 text-white py-2 rounded mt-2"
                         >
