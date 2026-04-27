@@ -434,8 +434,9 @@ function Dashboard() {
                                     await createUserWithEmailAndPassword(auth, email, password);
                                     setShowLogin(false);
                                 } catch (error) {
-                                    alert("Signup failed. Try a different email.");
-                                }
+                                    console.log(error);
+                                    alert(error.message);
+                                    }
                             }}
                             className="w-full bg-purple-500 text-white py-2 rounded mt-2"
                         >
